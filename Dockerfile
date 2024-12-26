@@ -1,13 +1,8 @@
 FROM python:3.10-slim
 
 # Install the necessary system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git build-essential libssl-dev libffi-dev --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
 # Define the working directory
 WORKDIR /home/python/app
